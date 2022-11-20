@@ -1,10 +1,230 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
+  height: 100vh;
   font-family: "Roboto", sans-serif;
+  background-color: #2b2b2b;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1.5em;
+}
+
+header {
+  color: #2b2b2b;
+  background: #DEDEDE;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.1em;
+  flex-direction: column;
+  padding: 0.3em;
+}
+header a {
+  align-self: center;
+  text-decoration: none;
+  color: inherit;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+header a:hover .github-logo {
+  transform: rotate(360deg);
+}
+header a:hover .name {
+  text-decoration: underline;
+}
+header .credit {
+  font-size: 1.2rem;
+  width: auto;
+  display: flex;
+  gap: 0.2em;
+}
+header .credit .github-logo {
+  transition: 250ms ease-in-out;
+}
+
+.options {
+  display: flex;
+  gap: 8px;
+}
+.options button {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-color: #DEDEDE;
+  color: #2b2b2b;
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  width: 100px;
+  max-width: 100px;
+}
+
+.container {
+  background-color: #DEDEDE;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+.container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  color: #DEDEDE;
+  background-color: #2b2b2b;
+  padding: 1em;
+}
+.container .card .text-holder {
+  font-size: 0.7rem;
+}
+.container .card .card-options {
+  display: flex;
+  gap: 8px;
+}
+.container .card .card-options button {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-color: #DEDEDE;
+  color: #2b2b2b;
+  outline: none;
+  border: none;
+  padding: 0.5em;
+}
+.container .card .card-options #delete-card {
+  background-color: #f0f0f0;
+  transition: 300ms ease-in-out;
+}
+.container .card .card-options #delete-card:hover {
+  box-shadow: -2px 2px 0px 2px black;
+}
+.container .card .card-options #edit-card-pages {
+  background-color: #f0f0f0;
+  transition: 300ms ease-in-out;
+}
+.container .card .card-options #edit-card-pages:hover {
+  box-shadow: 2px 2px 0px 2px black;
+}
+
+.style-modal {
+  background-color: rgba(17, 17, 17, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  overflow: auto;
+  display: none;
+  -webkit-animation-name: openmodal;
+          animation-name: openmodal;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+}
+@-webkit-keyframes openmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes openmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.style-modal .post-container {
+  background-color: #dedede;
+  width: 300px;
+  height: auto;
+  border: 1px solid #2b2b2b;
+  transition: 250ms ease-in-out;
+  padding: 1em 1.5em;
+}
+.style-modal .post-container .add-header-holder {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.post-form input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #2b2b2b;
+  font-family: "Roboto", sans-serif;
+  background-color: #dedede;
+  margin-bottom: 8px;
+}
+.post-form input::-webkit-outer-spin-button,
+.post-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.post-form ::-moz-placeholder {
+  color: #2b2b2b;
+}
+.post-form :-ms-input-placeholder {
+  color: #2b2b2b;
+}
+.post-form ::placeholder {
+  color: #2b2b2b;
+}
+.post-form .read-container p {
+  margin-bottom: 4px;
+}
+.post-form .read-container .radio-container {
+  display: flex;
+  gap: 10px;
+}
+.post-form .read-container .radio-container .radio-holder input[type=radio] {
+  outline: none;
+  accent-color: #2b2b2b;
+}
+.post-form .button-container {
+  display: flex;
+  gap: 0.8em;
+  align-self: center;
+}
+.post-form .button-container button {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background-color: #DEDEDE;
+  color: #2b2b2b;
+  outline: none;
+  border: 1px solid #2b2b2b;
+  padding: 0.5em;
+  width: 100px;
+  max-width: 100px;
+  transition: 250ms;
+}
+.post-form .button-container button:hover {
+  background-color: #2b2b2b;
+  color: #dedede;
 }/*# sourceMappingURL=style.css.map */

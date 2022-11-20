@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,94 @@
     <title>Library</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="Styles/style.css">
+    <script src="https://kit.fontawesome.com/12ee08d42e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Library</h1>
+        <a href="https://github.com/marcelee0713">
+            <div class="credit">
+                <div class="name">Marcelee</div>
+                <i class="fa-brands fa-github github-logo"></i>
+            </div>
+        </a>
+    </header>
+    <main>
+        <div class="options">
+            <button class="btn" id="add-btn">ADD</button>
+            <button class="btn" id="remove-all-btn">REMOVE</button>
+        </div>
+        <div class="container" id="box-container">
+            <div class="card">
+                <div id="author-container">
+                    <div class="text-holder">Author</div>
+                    <div class="author">Steven Evergreen</div>
+                </div>
+                <div id="title-container">
+                    <div class="text-holder">Title</div>
+                    <div class="title">But when you left me, I felt something.</div>
+                </div>
+                <div id="pages-container">
+                    <div class="text-holder">Pages</div>
+                    <div class="pages">125</div>
+                </div>
+                <div id="read">Has not read yet</div>
+                <div class="card-options">
+                    <button id="delete-card">DELETE</button>
+                    <button id="edit-card-pages">EDIT</button>
+                </div>
+            </div>
+            <div class="card">
+                <div id="author-container">
+                    <div class="text-holder">Author</div>
+                    <div class="author">Steven Evergreen</div>
+                </div>
+                <div id="title-container">
+                    <div class="text-holder">Title</div>
+                    <div class="title">But when you left me, I felt something.</div>
+                </div>
+                <div id="pages-container">
+                    <div class="text-holder">Pages</div>
+                    <div class="pages">125</div>
+                </div>
+                <div id="read">Has not read yet</div>
+                <div class="card-options">
+                    <button id="delete-card">DELETE</button>
+                    <button id="edit-card-pages">EDIT</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="post-modal" class="style-modal">
+        <div class="post-container">
+            <div class="add-header-holder">
+                Add a new book
+            </div>
+            <form class="post-form" action method="get">
+                <input type="text" id="title-input" name="title_text" placeholder="Enter title...">
+                <input type="text" id="author-input" name="author_text" placeholder="Enter author...">
+                <input type="number" id="pages-input" name="pages_text" placeholder="Enter how many pages...">
+                <div class="read-container">
+                    <p>Read it before?</p>
+                    <div class="radio-container">
+                        <div class="radio-holder">
+                            <label>Yes</label>
+                            <input type="radio" id="has-read" name="has_or_not_read" value="yes">
+                        </div>
+                        <div class="radio-holder">
+                            <label>No</label>
+                            <input type="radio" id="has-not-read" name="has_or_not_read" value="no">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="btn-submit" type="submit">SUBMIT</button>
+                    <button id="btn-close">CLOSE</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

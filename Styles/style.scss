@@ -82,6 +82,11 @@ header {
         padding: 0.5em;
         width: 100px;
         max-width: 100px;
+        transition: 250ms ease-in-out;
+        &:hover{
+            background-color: #f0f0f0;
+            transform: translateY(-5px);
+        }
     }
 }
 
@@ -117,23 +122,10 @@ header {
                 outline: none;
                 border: none;
                 padding: 0.5em;
-            }
-
-            #delete-card {
-                background-color: #f0f0f0;
-                transition: 300ms ease-in-out;
-
-                &:hover {
-                    box-shadow: -2px 2px 0px 2px black;
-                }
-            }
-
-            #edit-card-pages {
-                background-color: #f0f0f0;
-                transition: 300ms ease-in-out;
-
-                &:hover {
-                    box-shadow: 2px 2px 0px 2px black;
+                transition: 250ms ease-in-out;
+                &:hover{
+                    background-color: #f0f0f0;
+                    transform: translateY(-5px);
                 }
             }
         }

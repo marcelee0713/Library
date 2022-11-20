@@ -74,6 +74,11 @@ header .credit .github-logo {
   padding: 0.5em;
   width: 100px;
   max-width: 100px;
+  transition: 250ms ease-in-out;
+}
+.options button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
 }
 
 .container {
@@ -107,20 +112,11 @@ header .credit .github-logo {
   outline: none;
   border: none;
   padding: 0.5em;
+  transition: 250ms ease-in-out;
 }
-.container .card .card-options #delete-card {
+.container .card .card-options button:hover {
   background-color: #f0f0f0;
-  transition: 300ms ease-in-out;
-}
-.container .card .card-options #delete-card:hover {
-  box-shadow: -2px 2px 0px 2px black;
-}
-.container .card .card-options #edit-card-pages {
-  background-color: #f0f0f0;
-  transition: 300ms ease-in-out;
-}
-.container .card .card-options #edit-card-pages:hover {
-  box-shadow: 2px 2px 0px 2px black;
+  transform: translateY(-5px);
 }
 
 .style-modal {

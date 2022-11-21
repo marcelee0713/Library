@@ -83,7 +83,6 @@ header .credit .github-logo {
 
 .container {
   width: 500px;
-  height: 100%;
   background-color: #DEDEDE;
   padding: 1.5em;
   display: grid;
@@ -97,6 +96,26 @@ header .credit .github-logo {
   color: #DEDEDE;
   background-color: #2b2b2b;
   padding: 1em;
+  -webkit-animation-name: addcard;
+          animation-name: addcard;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+@-webkit-keyframes addcard {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes addcard {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .container .card .text-holder {
   font-size: 0.7rem;
@@ -225,4 +244,16 @@ header .credit .github-logo {
 .post-form .button-container button:hover {
   background-color: #2b2b2b;
   color: #dedede;
+}
+
+@media only screen and (max-width: 35em) {
+  main {
+    padding: 0.5em;
+  }
+  .container {
+    width: 300px;
+  }
+  .options {
+    align-self: center;
+  }
 }/*# sourceMappingURL=style.css.map */

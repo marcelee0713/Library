@@ -9,6 +9,7 @@ const titleInput = document.getElementById("title-input");
 const authorInput = document.getElementById("author-input");
 const pagesInput = document.getElementById("pages-input");
 let readInput = document.getElementsByName("has_or_not_read");
+let x = window.matchMedia("(max-width: 35em)");
 
 // When there is only one library
 if(container.children.length === 1){
@@ -51,6 +52,8 @@ submitBtn.addEventListener("click", (e) => {
     clearOutOurContainer(container);
     buildBook();
     closeModal();
+    //check also if it's one row
+    oneRow(x);
 });
 closeBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -158,6 +161,8 @@ function buildBook(){
             books.splice(i,1);
             clearOutOurContainer(container);
             buildBook();
+            //check also if it's one row
+            oneRow(x);
         });
         editCardPages.addEventListener("click", (e) => {
             e.preventDefault();
@@ -169,6 +174,8 @@ function buildBook(){
             }
             clearOutOurContainer(container);
             buildBook();
+            //check also if it's one row
+            oneRow(x);
         })
     }
 }
@@ -199,5 +206,19 @@ function clearOutOurContainer(element){
         element.firstElementChild.remove();
     }
 }
+function oneRow(x){
+    if(x.matches){
+        container.style.gridTemplateColumns = "1fr";
+    }
+    else{
+        if(container.children.length !== 1){
+            container.style.gridTemplateColumns = "1fr 1fr";
+        }
+    }
+}
 
 buildBook();
+
+//Change the column when it is phone size.
+oneRow(x);
+x.addListener(oneRow);
